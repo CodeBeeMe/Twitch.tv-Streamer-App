@@ -1,0 +1,574 @@
+/*!Date:20.06.2017 Copyright ©2017-2018 CSS Code by Cătălin Anghel-Ursu @Madness2aMaze (https://codepen.io/Madness2aMaze)
+
+- All Rights Reserved!
+
+MIT License
+
+Copyright (c) 2017-2018 Cătălin Anghel-Ursu (https://github.com/Madness2aMaze/Twitch.tv-Streamer-App)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+body {
+  background: rgb(121, 130, 105);
+}
+
+.title {
+  border-bottom: 1px rgb(102, 109, 88) solid;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 1px 2px 1px rgb(127, 62, 51);
+}
+
+.antenna {
+  color: #292b2c;
+  margin-top: 13px;
+  font-size: 102px;
+  line-height: 75px;
+  font-weight: 100;
+}
+
+.antenna-st {
+  width: 180px;
+  height: 10px;
+  background: #292b2c;
+  margin: 0 auto;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.side-pannel {
+  margin: 0 auto;
+  width: 620px;
+  height: 0px;
+  background: rgb(196, 206, 167);
+  opacity: .8;
+  transition: height .5s;
+}
+
+.side-pannel:hover {
+  height: 460px;
+}
+
+.channels {
+  font-family: 'Philosopher', sans-serif;
+  opacity: 0;
+  margin: 0 auto;
+  padding: 5px 5px 5px 5px;
+  background-color: color|transparent;
+  transition: .3s;
+}
+
+.channels h5 {
+  font-weight bold;
+  border-bottom 1px rgb(196, 206, 167) solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: rgba(127,62,51,0);
+  background: -moz-linear-gradient(
+    left, rgba(127,62,51,0) 0%,
+    rgba(127,62,51,0.29) 10%,
+    rgba(58,47,45,1) 34%,
+    rgba(41,43,44,1) 40%,
+    rgba(41,43,44,1) 60%,
+    rgba(55,46,45,1) 65%,
+    rgba(127,62,51,0.29) 90%,
+    rgba(127,62,51,0) 100%);
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, rgba(127,62,51,0)),
+    color-stop(10%, rgba(127,62,51,0.29)),
+    color-stop(34%, rgba(58,47,45,1)),
+    color-stop(40%, rgba(41,43,44,1)),
+    color-stop(60%, rgba(41,43,44,1)),
+    color-stop(65%, rgba(55,46,45,1)),
+    color-stop(90%, rgba(127,62,51,0.29)),
+    color-stop(100%, rgba(127,62,51,0)));
+  background: -webkit-linear-gradient(
+    left,
+    rgba(127,62,51,0) 0%,
+    rgba(127,62,51,0.29) 10%,
+    rgba(58,47,45,1) 34%,
+    rgba(41,43,44,1) 40%,
+    rgba(41,43,44,1) 60%,
+    rgba(55,46,45,1) 65%,
+    rgba(127,62,51,0.29) 90%,
+    rgba(127,62,51,0) 100%);
+  background: -o-linear-gradient(
+    left,
+    rgba(127,62,51,0) 0%,
+    rgba(127,62,51,0.29) 10%,
+    rgba(58,47,45,1) 34%,
+    rgba(41,43,44,1) 40%,
+    rgba(41,43,44,1) 60%,
+    rgba(55,46,45,1) 65%,
+    rgba(127,62,51,0.29) 90%,
+    rgba(127,62,51,0) 100%);
+  background: -ms-linear-gradient(
+    left,
+    rgba(127,62,51,0) 0%,
+    rgba(127,62,51,0.29) 10%,
+    rgba(58,47,45,1) 34%,
+    rgba(41,43,44,1) 40%,
+    rgba(41,43,44,1) 60%,
+    rgba(55,46,45,1) 65%,
+    rgba(127,62,51,0.29) 90%,
+    rgba(127,62,51,0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(127,62,51,0) 0%,
+    rgba(127,62,51,0.29) 10%,
+    rgba(58,47,45,1) 34%,
+    rgba(41,43,44,1) 40%,
+    rgba(41,43,44,1) 60%,
+    rgba(55,46,45,1) 65%,
+    rgba(127,62,51,0.29) 90%,
+    rgba(127,62,51,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr='#7f3e33',
+    endColorstr='#7f3e33',
+    GradientType=1 );
+  color: rgb(196, 206, 167);
+  font-size: 15px;
+}
+
+.channels p {
+  margin: 0 auto;
+  transition: .5s;
+  font-size: 13px;
+  line-height: 15px;
+  color: rgb(196, 206, 167);
+}
+
+.channels p:hover {
+  transition: .5s;
+  color: rgb(41, 43, 44);
+  background: rgba(121, 130, 105, 0);
+  background: -moz-linear-gradient(
+    left,
+    rgba(121, 130, 105, 0) 0%,
+    rgba(121, 130, 105, 0.2) 10%,
+    rgba(196, 206, 167, 0.57) 29%,
+    rgba(196, 206, 167, 1) 51%,
+    rgba(196, 206, 167, 0.59) 71%,
+    rgba(121, 130, 105, 0.2) 90%,
+    rgba(121, 130, 105, 0) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, rgba(121, 130, 105, 0)),
+    color-stop(10%, rgba(121, 130, 105, 0.2)),
+    color-stop(29%, rgba(196, 206, 167, 0.57)),
+    color-stop(51%, rgba(196, 206, 167, 1)),
+    color-stop(71%, rgba(196, 206, 167, 0.59)),
+    color-stop(90%, rgba(121, 130, 105, 0.2)),
+    color-stop(100%, rgba(121, 130, 105, 0))
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(121, 130, 105, 0) 0%,
+    rgba(121, 130, 105, 0.2) 10%,
+    rgba(196, 206, 167, 0.57) 29%,
+    rgba(196, 206, 167, 1) 51%,
+    rgba(196, 206, 167, 0.59) 71%,
+    rgba(121, 130, 105, 0.2) 90%,
+    rgba(121, 130, 105, 0) 100%
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(121, 130, 105, 0) 0%,
+    rgba(121, 130, 105, 0.2) 10%,
+    rgba(196, 206, 167, 0.57) 29%,
+    rgba(196, 206, 167, 1) 51%,
+    rgba(196, 206, 167, 0.59) 71%,
+    rgba(121, 130, 105, 0.2) 90%,
+    rgba(121, 130, 105, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    left,
+    rgba(121, 130, 105, 0) 0%,
+    rgba(121, 130, 105, 0.2) 10%,
+    rgba(196, 206, 167, 0.57) 29%,
+    rgba(196, 206, 167, 1) 51%,
+    rgba(196, 206, 167, 0.59) 71%,
+    rgba(121, 130, 105, 0.2) 90%,
+    rgba(121, 130, 105, 0) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(121, 130, 105, 0) 0%,
+    rgba(121, 130, 105, 0.2) 10%,
+    rgba(196, 206, 167, 0.57) 29%,
+    rgba(196, 206, 167, 1) 51%,
+    rgba(196, 206, 167, 0.59) 71%,
+    rgba(121, 130, 105, 0.2) 90%,
+    rgba(121, 130, 105, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#798269',
+      endColorstr='#798269',
+      GradientType=1
+    );
+}
+
+.channels:hover {
+  opacity: 1;
+  transition: 2.5s;
+}
+
+.channels li {
+  margin: 0 auto;
+  height: 60px;
+  width: 500px;
+  transition: 1s;
+  background: rgb(127, 62, 51);
+  border-radius: 25px;
+  list-style-type: none;
+  margin-top: 12px;
+  border: 1px #292b2c solid;
+}
+
+.tv-box {
+  margin: 0 auto;
+  width: 760px;
+  height: 600px;
+  border: 20px rgb(127, 62, 51) solid;
+  border-radius: 80px;
+  background: rgb(196, 206, 167);
+  -webkit-box-shadow: inset 20px 15px 130px -8px rgba(57, 52, 48, 1);
+  -moz-box-shadow: inset 20px 15px 130px -8px rgba(57, 52, 48, 1);
+  box-shadow: inset 20px 15px 130px -8px rgba(57, 52, 48, 1);
+}
+
+.sfx {
+}
+
+.screen {
+  margin: 0 auto;
+  width: 620px;
+  height: 460px;
+  margin-top: 50px;
+  -webkit-box-shadow: inset 2px -4px 90px 5px rgba(57, 52, 48, 1);
+  -moz-box-shadow: inset 2px -4px 90px 5px rgba(57, 52, 48, 1);
+  box-shadow: inset 2px -4px 90px 5px rgba(57, 52, 48, 1);
+  background: rgba(202, 255, 165, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(202, 255, 165, 1) 0%,
+    rgba(202, 255, 165, 1) 4%,
+    rgba(124, 140, 112, 1) 80%,
+    rgba(124, 140, 112, 1) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(202, 255, 165, 1)),
+    color-stop(4%, rgba(202, 255, 165, 1)),
+    color-stop(80%, rgba(124, 140, 112, 1)),
+    color-stop(100%, rgba(124, 140, 112, 1))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(202, 255, 165, 1) 0%,
+    rgba(202, 255, 165, 1) 4%,
+    rgba(124, 140, 112, 1) 80%,
+    rgba(124, 140, 112, 1) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(202, 255, 165, 1) 0%,
+    rgba(202, 255, 165, 1) 4%,
+    rgba(124, 140, 112, 1) 80%,
+    rgba(124, 140, 112, 1) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(202, 255, 165, 1) 0%,
+    rgba(202, 255, 165, 1) 4%,
+    rgba(124, 140, 112, 1) 80%,
+    rgba(124, 140, 112, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(202, 255, 165, 1) 0%,
+    rgba(202, 255, 165, 1) 4%,
+    rgba(124, 140, 112, 1) 80%,
+    rgba(124, 140, 112, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#caffa5',
+      endColorstr='#7c8c70',
+      GradientType=1
+    );
+  border: 2px #4b483e solid;
+  border-radius: 120px;
+  /*border-radius: 280px / 120px;*/ /*oval shape*/
+  overflow: hidden;
+  transition: 1s;
+}
+
+
+iframe {
+  opacity: .7;
+}
+
+.brand {
+  margin-top: 15px;
+}
+
+h4 {
+  color: #292b2c;
+  font-family: 'Lobster', cursive;
+  font-size: 16px;
+}
+
+.row {
+  height: 15px;
+}
+
+.on {
+  color: #c11f1f;
+  margin: 0 auto;
+  margin-left: 215px;
+  font-family: 'Lobster', cursive;
+  font-size: 8px;
+}
+.on i {
+  padding-bottom: 5px;
+}
+
+.off {
+  color: #292b2c;
+  margin: 0 auto;
+  margin-right: 5px;
+  margin-left: 190px;
+  font-family: 'Lobster', cursive;
+  font-size: 8px;
+}
+
+.off i {
+  padding-top: 13px;
+}
+
+.knob {
+  margin: 0 auto;
+  width: 33px;
+  height: 33px;
+  background: #292b2c;
+  border-radius: 25px;
+  border: 3px rgb(127, 62, 51) double;
+  transition: .5s;
+  transform: rotate(-90deg);
+}
+
+.glow {
+  animation-name: fade;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fade {
+  0%, 100% {
+    box-shadow: 0px 0px 10px red;
+  }
+  50% {
+    box-shadow: none;
+  }
+}
+
+.knob-shad {
+  margin: 0 auto;
+  margin-left: 0;
+  width: 33px;
+  height: 33px;
+  border-radius: 25px;
+  box-shadow: 3px 4px 6px rgb(89, 25, 20);
+}
+
+.knob p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #c11f1f;
+  line-height: 2px;
+}
+
+.knob:hover {
+  transition: .5s;
+}
+
+.stand {
+  margin: 0 auto;
+  width: 620px;
+  height: 58px;
+  background: rgb(127, 62, 51);
+  -webkit-box-shadow: inset 30px 35px 25px -15px rgba(89, 34, 30, 1);
+  -moz-box-shadow: inset 30px 35px 25px -15px rgba(89, 34, 30, 1);
+  box-shadow: inset 30px 35px 25px -15px rgba(89, 34, 30, 1);
+  border-bottom: none;
+}
+
+.digital {  
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  transition: .5s;
+  margin-top: 5px;
+  border-radius: 50px;
+  border: 1px #871515 solid;
+  box-shadow: inset 0px 0px 25px 8px #1f1f21;
+  background-image: url("");
+  background: rgb(79, 91, 70);  
+  background-size: 49px;
+}
+
+.display {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0 auto;
+  padding-top: 9px;
+  font-size: 20px;
+  color: #c11f1f;
+}
+
+.vent1 {
+  width: 145px;
+  height: 10px;
+  margin: 0 auto;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: 100px;
+  background-size: 10px;
+  background-color: #202021;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%237f3e33' fill-opacity='1'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  box-shadow: inset 0px 0px 5px 2px #202021;
+}
+
+.vents {
+  width: 145px;
+  height: 10px;
+  margin: 0 auto;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: 100px;
+  background-size: 10px;
+  background-color: #292b2c;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%237f3e33' fill-opacity='1'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  box-shadow: inset 0px 0px 5px 2px #292b2c;
+}
+
+.desk {
+  margin: 0 auto;
+  width: 100%;
+  height: 30px;
+  background: rgba(121, 130, 105, 1);
+  background: -moz-linear-gradient(
+    left,
+    rgba(121, 130, 105, 1) 0%,
+    rgba(121, 130, 105, 1) 10%,
+    rgba(41, 43, 44, 1) 40%,
+    rgba(41, 43, 44, 1) 60%,
+    rgba(121, 130, 105, 1) 90%,
+    rgba(121, 130, 105, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, rgba(121, 130, 105, 1)),
+    color-stop(10%, rgba(121, 130, 105, 1)),
+    color-stop(40%, rgba(41, 43, 44, 1)),
+    color-stop(60%, rgba(41, 43, 44, 1)),
+    color-stop(90%, rgba(121, 130, 105, 1)),
+    color-stop(100%, rgba(121, 130, 105, 1))
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(121, 130, 105, 1) 0%,
+    rgba(121, 130, 105, 1) 10%,
+    rgba(41, 43, 44, 1) 40%,
+    rgba(41, 43, 44, 1) 60%,
+    rgba(121, 130, 105, 1) 90%,
+    rgba(121, 130, 105, 1) 100%
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(121, 130, 105, 1) 0%,
+    rgba(121, 130, 105, 1) 10%,
+    rgba(41, 43, 44, 1) 40%,
+    rgba(41, 43, 44, 1) 60%,
+    rgba(121, 130, 105, 1) 90%,
+    rgba(121, 130, 105, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    left,
+    rgba(121, 130, 105, 1) 0%,
+    rgba(121, 130, 105, 1) 10%,
+    rgba(41, 43, 44, 1) 40%,
+    rgba(41, 43, 44, 1) 60%,
+    rgba(121, 130, 105, 1) 90%,
+    rgba(121, 130, 105, 1) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(121, 130, 105, 1) 0%,
+    rgba(121, 130, 105, 1) 10%,
+    rgba(41, 43, 44, 1) 40%,
+    rgba(41, 43, 44, 1) 60%,
+    rgba(121, 130, 105, 1) 90%,
+    rgba(121, 130, 105, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#798269',
+      endColorstr='#798269',
+      GradientType=1
+    );
+}
+
+.footer {
+  font-family: 'Philosopher', sans-serif;
+  padding-top: 3px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #555555;
+}
+
+a {
+  color: rgb(127, 62, 51);
+  transition: .5s;
+}
+
+#icon-fcc {
+  font-size: 20px;
+}
+
+#icon-cpen {
+  font-size: 20px;
+}
+
+a:hover, a:focus {
+  text-decoration: none !important;
+  transition: .5s;
+  color: #c11f1f;
+}
